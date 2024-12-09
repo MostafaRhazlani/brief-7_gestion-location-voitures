@@ -1,5 +1,11 @@
-
-<?php include('../layout/_HEAD.php') ?>
+<?php 
+    require_once('../../connectdb/connectiondb.php');
+    include('../layout/_HEAD.php');
+    
+    // select table users
+    $clients = "SELECT * FROM clients";
+    $resultClients = $conn->query($clients);
+?>
 
 <div class="w-full h-screen grid grid-cols-5 p-2 gap-2">
     <!-- include sidebar -->
@@ -27,16 +33,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-t-[0.2px] border-gray-500 hover:bg-[#585286]">
-                            <td class="px-2 py-4"></td>
-                            <td class="px-2 py-4"></td>
-                            <td class="px-2 py-4"></td>
-                            <td class="px-2 py-4"></td>
-                            <td class="px-2 py-4">
-                                <span class="edit bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 cursor-pointer mr-1"><i class="fa-solid fa-user-pen"></i>&nbsp;&nbsp;Edit</span>
-                                <span class="remove bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer"><i class="fa-solid fa-user-minus"></i>&nbsp;&nbsp;Delete</span>
-                            </td>
-                        </tr>
+                        <!-- display all users -->
+                        <?php if($resultClients) { ?>
+                            <?php while($client = $resultClients->fetch()) { ?>
+                                <tr class="border-t-[0.2px] border-gray-500 hover:bg-[#585286]">
+                                    <td class="px-2 py-4"><?php echo $client['id'] ?></td>
+                                    <td class="px-2 py-4"><?php echo $client['name'] ?></td>
+                                    <td class="px-2 py-4"><?php echo $client['address'] ?></td>
+                                    <td class="px-2 py-4"><?php echo $client['numberPhone'] ?></td>
+                                    <td class="px-2 py-4">
+                                        <span class="edit bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 cursor-pointer mr-1"><i class="fa-solid fa-user-pen"></i>&nbsp;&nbsp;Edit</span>
+                                        <span class="remove bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer"><i class="fa-solid fa-user-minus"></i>&nbsp;&nbsp;Delete</span>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
