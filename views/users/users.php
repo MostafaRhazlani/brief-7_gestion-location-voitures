@@ -52,8 +52,27 @@
                 </table>
             </div>
             <?php include('./addClient.php') ?>
+            <?php include('../../alert.php') ?>
         </div>
     </div>
 </div>
 
-<?php include('../layout/_FOOTER.php') ?>
+<?php 
+
+    include('../layout/_FOOTER.php');
+
+    if(isset($_GET['alert'])) {
+        $alert = $_GET['alert'];
+
+        if($alert = 'success') {
+            echo "<script>
+                const showAlert = document.querySelector('.showAlert');
+                showAlert.classList.remove('hidden')
+
+                setTimeout(() => {
+                    window.location.href = 'users.php'
+                }, 3000)
+            </script>";
+        }
+    }
+?>

@@ -7,10 +7,10 @@
     $phone = isset($_POST['phone']) ? $_POST['phone'] : "";
 
     $clientQuery = "INSERT INTO clients(name, address, numberPhone) VALUES(?,?,?)";
-
     $params = array($name, $address, $phone);
-    $resultClientQuery = $conn->prepare($clientQuery);
-    $resultClientQuery->execute($params);
 
-    header('location:users.php');
+    $resultClientQuery = $conn->prepare($clientQuery);
+    if($resultClientQuery->execute($params)) {
+        header('location:users.php?alert=success');
+    }
 ?>
