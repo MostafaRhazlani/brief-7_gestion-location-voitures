@@ -21,6 +21,7 @@
         <?php if($resultgetClient) { ?>
             <?php while($client = $resultgetClient->fetch()) { ?>
                 <div class="flex gap-3 justify-between mb-4">
+                    <input type="hidden" name="idUser" value="<?php echo $client['id'] ?>">
                     <div class="flex flex-col w-2/4">
                         <label class="ml-2" for="name2">Name Client <span class="text-red-600">*</span></label>
                         <input class="px-3 py-2 border-2 border-gray-400 rounded-md mt-1" type="text" value="<?php echo $client['name'] ?>" name="updateName" id="name2" placeholder="Enter name client">
