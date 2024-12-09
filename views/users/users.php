@@ -52,6 +52,7 @@
                 </table>
             </div>
             <?php include('./addClient.php') ?>
+            <?php include('./editClient.php') ?>
             <?php include('../../alert.php') ?>
         </div>
     </div>
