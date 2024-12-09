@@ -17,7 +17,7 @@
         </header>
 
         <div class="mt-2 py-4 px-6 bg-[#2a2455] rounded-md text-white flex justify-between">
-            <button class="py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-user-plus"></i> Add Client</button>
+            <button class="showFormAdd py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-user-plus"></i> Add Client</button>
             <button class="py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-arrow-down-a-z"></i> Sort Clients</button>
         </div>
         <div class="pt-2 flex justify-center h-[82%]">
@@ -51,6 +51,9 @@
                     </tbody>
                 </table>
             </div>
+            <?php include('./addClient.php') ?>
         </div>
     </div>
 </div>
+
+<?php include('../layout/_FOOTER.php') ?>
