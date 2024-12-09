@@ -42,7 +42,9 @@
                                     <td class="px-2 py-4"><?php echo $client['address'] ?></td>
                                     <td class="px-2 py-4"><?php echo $client['numberPhone'] ?></td>
                                     <td class="px-2 py-4">
-                                        <span class="edit bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 cursor-pointer mr-1"><i class="fa-solid fa-user-pen"></i>&nbsp;&nbsp;Edit</span>
+                                        <a href="./users.php?idUser=<?php echo $client['id'] ?>" class="bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 mr-1">
+                                            <i class="fa-solid fa-user-pen"></i>&nbsp;&nbsp;Edit
+                                        </a>
                                         <span class="remove bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer"><i class="fa-solid fa-user-minus"></i>&nbsp;&nbsp;Delete</span>
                                     </td>
                                 </tr>
