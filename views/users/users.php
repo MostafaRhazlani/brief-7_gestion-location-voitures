@@ -42,10 +42,12 @@
                                     <td class="px-2 py-4"><?php echo $client['address'] ?></td>
                                     <td class="px-2 py-4"><?php echo $client['numberPhone'] ?></td>
                                     <td class="px-2 py-4">
-                                        <a href="./users.php?idUser=<?php echo $client['id'] ?>" class="bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 mr-1">
+                                        <a href="./users.php?idUser=<?php echo $client['id'] ?>&editUser=edit" class="showFormEdit bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 mr-1">
                                             <i class="fa-solid fa-user-pen"></i>&nbsp;&nbsp;Edit
                                         </a>
-                                        <span class="remove bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer"><i class="fa-solid fa-user-minus"></i>&nbsp;&nbsp;Delete</span>
+                                        <a href="./users.php?idUser=<?php echo $client['id'] ?>&removeUser=remove" class="showFormDelete bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer">
+                                            <i class="fa-solid fa-user-minus"></i>&nbsp;&nbsp;Delete
+                                        </a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -55,6 +57,7 @@
             </div>
             <?php include('./addClient.php') ?>
             <?php include('./editClient.php') ?>
+            <?php include('./deleteClient.php') ?>
             <?php include('../../alertAdd.php') ?>
             <?php include('../../alertEdit.php') ?>
             <?php include('../../alertDelete.php') ?>
