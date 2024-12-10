@@ -1,6 +1,5 @@
 <?php
     require_once('../../connectdb/connectiondb.php');
-    include('./alert.php');
     // insert new client
     $name = isset($_POST['name']) ? $_POST['name'] : "";
     $address = isset($_POST['address']) ? $_POST['address'] : "";
@@ -11,6 +10,6 @@
 
     $resultClientQuery = $conn->prepare($clientQuery);
     if($resultClientQuery->execute($params)) {
-        header('location:users.php?alert=success');
+        header('location:users.php?alert=success_add');
     }
 ?>
