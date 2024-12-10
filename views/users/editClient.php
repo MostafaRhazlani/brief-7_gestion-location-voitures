@@ -1,6 +1,6 @@
 <?php 
     //  check if the id exist in url and get it
-    if(isset($_GET['idUser'])) {
+    if(isset($_GET['idUser']) && isset($_GET['editUser'])) {
         $getId = $_GET['idUser'];
         echo "<script>
             document.addEventListener('DOMContentLoaded', () => {
