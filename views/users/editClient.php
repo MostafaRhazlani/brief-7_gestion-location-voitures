@@ -18,7 +18,7 @@
 <div class="formEdit absolute z-10 w-2/6 bg-white p-5 top-20 rounded-md hidden">
     <h1 class="text-2xl font-semibold text-center mb-5">Edit Client</h1>
     <form action="./updateClient.php" method="POST">
-        <?php if($resultgetClient) { ?>
+        <?php if(isset($resultgetClient)) { ?>
             <?php while($client = $resultgetClient->fetch()) { ?>
                 <div class="flex gap-3 justify-between mb-4">
                     <input type="hidden" name="idUser" value="<?php echo $client['id'] ?>">
