@@ -11,7 +11,8 @@
     $updateClient = "UPDATE clients SET name = ?, address = ?, numberPhone = ? WHERE id = ?";    
     $params = array($updateName, $updateAddress, $updatePhone, $getId);
     $resultUpdateClient = $conn->prepare($updateClient);
-    $resultUpdateClient->execute($params);
-
-    header('location:users.php');
+    
+    if($resultUpdateClient->execute($params)) {
+        header('location:users.php?alert=success_update');
+    }
 ?>

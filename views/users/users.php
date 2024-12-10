@@ -55,7 +55,9 @@
             </div>
             <?php include('./addClient.php') ?>
             <?php include('./editClient.php') ?>
-            <?php include('../../alert.php') ?>
+            <?php include('../../alertAdd.php') ?>
+            <?php include('../../alertEdit.php') ?>
+            <?php include('../../alertDelete.php') ?>
         </div>
     </div>
 </div>
@@ -67,10 +69,19 @@
     if(isset($_GET['alert'])) {
         $alert = $_GET['alert'];
 
-        if($alert = 'success') {
+        if($alert == 'success_add') {
             echo "<script>
-                const showAlert = document.querySelector('.showAlert');
-                showAlert.classList.remove('hidden')
+                const showAlertAdd = document.querySelector('.showAlertAdd');
+                showAlertAdd.classList.remove('hidden')
+
+                setTimeout(() => {
+                    window.location.href = 'users.php'
+                }, 3000)
+            </script>";
+        } else if($alert == 'success_update') {
+            echo "<script>
+                const showAlertEdit = document.querySelector('.showAlertEdit');
+                showAlertEdit.classList.remove('hidden')
 
                 setTimeout(() => {
                     window.location.href = 'users.php'
