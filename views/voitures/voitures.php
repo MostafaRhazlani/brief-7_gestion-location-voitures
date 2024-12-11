@@ -37,9 +37,9 @@
                 <tbody>
                     <!-- display all voitures -->
                     <?php if($resultVoitures) { ?>
-                        <?php while($voiture = mysqli_fetch_assoc($resultVoitures)) { ?>
+                        <?php $index = 0; while($voiture = mysqli_fetch_assoc($resultVoitures)) { ?>
                             <tr class="border-t-[0.2px] border-gray-500 hover:bg-[#585286]">
-                                <td class="px-2 py-4"><?php echo $voiture['id'] ?></td>
+                                <td class="px-2 py-4"><?php echo $index +=1 ?></td>
                                 <td class="px-2 py-4"><?php echo $voiture['numImmatriculation'] ?></td>
                                 <td class="px-2 py-4"><?php echo $voiture['marque'] ?></td>
                                 <td class="px-2 py-4"><?php echo $voiture['modele'] ?></td>

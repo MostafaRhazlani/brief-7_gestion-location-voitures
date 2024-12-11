@@ -35,9 +35,9 @@
                 <tbody>
                     <!-- display all users -->
                     <?php if($resultClients) { ?>
-                        <?php while($client = mysqli_fetch_assoc($resultClients)) { ?>
+                        <?php $index = 0; while($client = mysqli_fetch_assoc($resultClients)) { ?>
                             <tr class="border-t-[0.2px] border-gray-500 hover:bg-[#585286]">
-                                <td class="px-2 py-4"><?php echo $client['id'] ?></td>
+                                <td class="px-2 py-4"><?php echo $index +=1 ?></td>
                                 <td class="px-2 py-4"><?php echo $client['name'] ?></td>
                                 <td class="px-2 py-4"><?php echo $client['address'] ?></td>
                                 <td class="px-2 py-4"><?php echo $client['numberPhone'] ?></td>

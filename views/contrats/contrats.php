@@ -41,9 +41,9 @@
                 <tbody>
                     <!-- display all contrats -->
                     <?php if($resultContrats) { ?>
-                        <?php while($contrat = mysqli_fetch_assoc($resultContrats)) { ?>
+                        <?php $index = 0; while($contrat = mysqli_fetch_assoc($resultContrats)) { ?>
                             <tr class="border-t-[0.2px] border-gray-500 hover:bg-[#585286]">
-                                <td class="px-2 py-4"><?php echo $contrat['id'] ?></td>
+                                <td class="px-2 py-4"><?php echo $index +=1 ?></td>
                                 <td class="px-2 py-4"><?php echo $contrat['name'] ?></td>
                                 <td class="px-2 py-4"><?php echo $contrat['numImmatriculation'] ?></td>
                                 <td class="px-2 py-4"><?php echo $contrat['dateDebut'] ?></td>
