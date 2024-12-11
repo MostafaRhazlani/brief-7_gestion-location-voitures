@@ -45,10 +45,10 @@
                                 <td class="px-2 py-4"><?php echo $voiture['modele'] ?></td>
                                 <td class="px-2 py-4"><?php echo $voiture['annee'] ?></td>
                                 <td class="px-2 py-4">
-                                    <a href="./users.php?idEditUser=<?php echo $client['id'] ?>" class="showFormEdit bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 mr-2">
+                                    <a href="./voitures.php?idEditVoiture=<?php echo $voiture['id'] ?>" class="showFormEdit bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 mr-2">
                                         <i class="fa-solid fa-user-pen"></i>&nbsp;Edit
                                     </a>
-                                    <a href="./users.php?idDeleteUser=<?php echo $client['id'] ?>" class="showFormDelete bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer">
+                                    <a href="./voitures.php?idDeleteVoiture=<?php echo $voiture['id'] ?>" class="showFormDelete bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer">
                                         <i class="fa-solid fa-user-minus"></i>&nbsp;Delete
                                     </a>
                                 </td>
@@ -59,6 +59,7 @@
             </table>
         </div>
         <?php include('./addVoiture.php') ?>
+        <?php include('./editVoiture.php') ?>
         <?php include('../../alertAdd.php') ?>
     </div>
 </div>
