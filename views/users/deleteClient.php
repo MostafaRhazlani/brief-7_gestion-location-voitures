@@ -1,8 +1,8 @@
 <?php
     require_once('../../connectdb/connectiondb.php');
     //  check if the id exist in url and get it
-    if(isset($_GET['idUser']) && isset($_GET['removeUser'])) {
-        $getId = $_GET['idUser'];
+    if(isset($_GET['idDeleteUser'])) {
+        $getId = $_GET['idDeleteUser'];
         echo "<script>
             document.addEventListener('DOMContentLoaded', () => {
                 const formDelete = document.querySelector('.formDelete');
@@ -12,16 +12,18 @@
 
         // get client when id in url equal id of client
         $getClient = "SELECT id, name FROM clients WHERE id = $getId";
-        $resultgetClient = $conn->query($getClient); 
+        $resultgetClient = $conn->query($getClient)->fetch();
+        
+        
     }
-    
+
     if(isset($_POST['idUser'])) {
         $idUser = $_POST['idUser'];
 
         $queryDelete = "DELETE FROM clients WHERE id = ?";
         $params = array($idUser);
         $resultQueryDelete = $conn->prepare($queryDelete);
-
+        
         if($resultQueryDelete->execute($params)) {
             header('location:users.php?alert=success_delete');
         }
@@ -38,14 +40,12 @@
     <h1 class="text-2xl font-semibold text-center mb-4">Are You Sure You Want Delete</h1>
     
     <form action="./deleteClient.php" method="post">
-        <?php if(isset($resultgetClient)) { ?>
-            <?php while($client = $resultgetClient->fetch()) { ?>
-                <input type="hidden" name="idUser" value="<?php echo $client['id'] ?>">
-                <div class="w-full p-3 bg-gray-200 rounded-md text-gray-700">
-                    <h1><?php echo $client['name'] ?></h1>
-                </div>
-            <?php } ?>
-        <?php } ?>
+        
+        <input type="hidden" name="idUser" value="<?php echo $resultgetClient['id'] ?>">
+        <div class="w-full p-3 bg-gray-200 rounded-md text-gray-700">
+            <h1><?php echo $resultgetClient['name'] ?></h1>
+        </div>
+       
         <div class="mt-10 flex justify-evenly">
             <button id="closeDelete" type="button" class="px-3 py-2 w-2/6 bg-red-600 text-white rounded-md hover:bg-red-400">No</button>
             <button class="px-3 py-2 w-2/6 bg-blue-600 text-white rounded-md hover:bg-blue-400" type="submit">Yes</button>
