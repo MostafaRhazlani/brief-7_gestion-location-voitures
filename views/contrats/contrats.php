@@ -2,7 +2,9 @@
     require_once('../../connectdb/connectiondb.php');
     
     // select table contrats
-    $contrats = "SELECT * FROM contrats";
+    $contrats = "SELECT contrats.*, clients.name, voitures.numImmatriculation FROM ((contrats 
+                INNER JOIN clients ON contrats.numClient = clients.id)
+                INNER JOIN voitures ON contrats.numVoiture = voitures.id)";
     $resultContrats = mysqli_query($conn, $contrats);
 ?>
 
@@ -28,7 +30,7 @@
                 <thead>
                     <tr class="bg-[#191444]">
                         <th class="p-4">ID</th>
-                        <th class="p-4">N° Client</th>
+                        <th class="p-4">Name Client</th>
                         <th class="p-4">N° Immatriculation</th>
                         <th class="p-4">Date Debut</th>
                         <th class="p-4">Date Fin</th>
@@ -42,7 +44,7 @@
                         <?php while($contrat = mysqli_fetch_assoc($resultContrats)) { ?>
                             <tr class="border-t-[0.2px] border-gray-500 hover:bg-[#585286]">
                                 <td class="px-2 py-4"><?php echo $contrat['id'] ?></td>
-                                <td class="px-2 py-4"><?php echo $contrat['numClient'] ?></td>
+                                <td class="px-2 py-4"><?php echo $contrat['name'] ?></td>
                                 <td class="px-2 py-4"><?php echo $contrat['numImmatriculation'] ?></td>
                                 <td class="px-2 py-4"><?php echo $contrat['dateDebut'] ?></td>
                                 <td class="px-2 py-4"><?php echo $contrat['dateFin'] ?></td>
