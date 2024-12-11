@@ -34,7 +34,7 @@
             <?php echo "<img class='p-1 bg-cyan-600 rounded-md mr-4' width='27' src='../../src/img/images_sidebar/car.svg' alt=''>" ?>
             Cars
         </a>
-        <a class="p-2 hover:bg-[#595480] rounded-sm flex items-center" href="#">
+        <a class="p-2 hover:bg-[#595480] rounded-sm flex items-center <?php if($page == '/views/contrats/contrats.php') echo 'bg-[#595480]' ?>" href="/views/contrats/contrats.php">
             <?php echo "<img class='p-1 bg-purple-600 rounded-md mr-4' width='27' src='../../src/img/images_sidebar/contract.svg' alt=''>" ?>
             Contracts
         </a>
