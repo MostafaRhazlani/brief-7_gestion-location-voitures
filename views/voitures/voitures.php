@@ -60,8 +60,10 @@
         </div>
         <?php include('./addVoiture.php') ?>
         <?php include('./editVoiture.php') ?>
+        <?php include('./deleteVoiture.php') ?>
         <?php include('../../alertAdd.php') ?>
         <?php include('../../alertEdit.php') ?>
+        <?php include('../../alertDelete.php') ?>
     </div>
 </div>
 
@@ -84,6 +86,15 @@
             echo "<script>
                 const showAlertEdit = document.querySelector('.showAlertEdit');
                 showAlertEdit.classList.remove('hidden')
+
+                setTimeout(() => {
+                    window.location.href = 'voitures.php'
+                }, 3000)
+            </script>";
+        } else {
+            echo "<script>
+                const showAlertDelete = document.querySelector('.showAlertDelete');
+                showAlertDelete.classList.remove('hidden')
 
                 setTimeout(() => {
                     window.location.href = 'voitures.php'

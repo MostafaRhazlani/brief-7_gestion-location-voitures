@@ -1,3 +1,5 @@
+<?php $page = $_SERVER['PHP_SELF'] ?>
+
 <div class="showAlertDelete absolute z-10 w-1/4 bg-white p-5 top-20 hidden rounded-md text-center">
     
     <div class="w-full flex justify-center mb-10 mt-5">
@@ -6,5 +8,11 @@
         </div>
     </div>
 
-    <h1 class="text-2xl font-semibold text-center mb-10">Client deleted succesfuly</h1>
+    <?php
+        if($page == '/views/users/users.php') {
+            echo "<h1 class='text-2xl font-semibold text-center mb-10'>Client deleted succesfuly</h1>";
+        } else if($page == '/views/voitures/voitures.php') {
+            echo "<h1 class='text-2xl font-semibold text-center mb-10'>Voiture deleted succesfuly</h1>";
+        }
+    ?>
 </div>
