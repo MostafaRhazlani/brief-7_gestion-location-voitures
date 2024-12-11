@@ -1,4 +1,8 @@
-<?php include('../../URL.php') ?>
+<?php 
+    include('../../URL.php');
+    
+    $page = $_SERVER['PHP_SELF'];
+?>
 
 <div class="bg-[#2a2455] rounded-md col-span-1 p-4 text-white">
     <div class="flex items-center justify-center text-xl mb-8">
@@ -22,7 +26,7 @@
 
     <h1>Pages</h1>
     <div class="flex flex-col mt-2">
-        <a class="p-2 mb-1 hover:bg-[#595480] rounded-sm flex items-center" href="#">
+        <a class="p-2 mb-1 hover:bg-[#595480] rounded-sm flex items-center <?php if($page == '/views/users/users.php') echo 'bg-[#595480]' ?>" href="<?php $URL ?>/views/users/users.php">
         <?php echo "<img class='p-1 bg-emerald-600 rounded-md mr-4' width='26' src='$URL/src/img/images_sidebar/users.svg' alt=''>" ?>
             Clients
         </a>
