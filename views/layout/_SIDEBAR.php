@@ -1,5 +1,5 @@
 <?php 
-    include('../../URL.php');
+    $URL = "http://localhost:8000";
     
     $page = $_SERVER['PHP_SELF'];
 ?>
@@ -18,10 +18,10 @@
         </div>
     </div>
     
-    <h1>Home</h1>
-    <a class="mb-4 p-2 hover:bg-[#595480] rounded-sm flex items-center" href="#">
-        <?php echo "<img class='p-1 bg-slate-600 rounded-md mr-4' width='26' src='../../src/img/images_sidebar/home.svg' alt=''>" ?>
-            Home
+    <h1>Dashboard</h1>
+    <a class="mb-4 p-2 hover:bg-[#595480] rounded-sm flex items-center <?php if($page == '/views/dashboard.php') echo 'bg-[#595480]' ?>" href="<?php $URL ?>/views/dashboard.php">
+        <?php echo "<img class='p-1 bg-blue-600 rounded-md mr-4' width='26' src='../../src/img/images_sidebar/pie-chart.svg' alt=''>" ?>
+            Dashboard
     </a>
 
     <h1>Pages</h1>
