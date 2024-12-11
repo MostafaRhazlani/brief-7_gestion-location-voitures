@@ -50,8 +50,12 @@
                                 <td class="px-2 py-4"><?php echo $contrat['dateFin'] ?></td>
                                 <td class="px-2 py-4"><?php echo $contrat['duree'] ?></td>
                                 <td class="px-2 py-4">
-                                    <span class="bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 cursor-pointer mr-1"><i class="fa-regular fa-pen-to-square"></i>&nbsp;Edit</span>
-                                    <span class="bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer"><i class="fa-regular fa-trash-can"></i>&nbsp;Delete</span>
+                                    <a href="./contrats.php?idEditContrat=<?php echo $contrat['id'] ?>" class="showFormEdit bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 mr-2">
+                                        <i class="fa-regular fa-pen-to-square"></i>&nbsp;Edit
+                                    </a>
+                                    <a href="./contrats.php?idDeleteContrat=<?php echo $contrat['id'] ?>" class="showFormDelete bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer">
+                                        <i class="fa-regular fa-trash-can"></i>&nbsp;Delete
+                                    </a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -60,6 +64,7 @@
             </table>
         </div>
         <?php include('./addContrats.php') ?>
+        <?php include('./editContrat.php') ?>
         <?php include('../../alertAdd.php') ?>
     </div>
 </div>
