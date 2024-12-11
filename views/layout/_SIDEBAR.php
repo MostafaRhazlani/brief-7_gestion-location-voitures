@@ -30,7 +30,7 @@
         <?php echo "<img class='p-1 bg-emerald-600 rounded-md mr-4' width='26' src='../../src/img/images_sidebar/users.svg' alt=''>" ?>
             Clients
         </a>
-        <a class="p-2 mb-1 hover:bg-[#595480] rounded-sm flex items-center" href="#">
+        <a class="p-2 mb-1 hover:bg-[#595480] rounded-sm flex items-center <?php if($page == '/views/voitures/voitures.php') echo 'bg-[#595480]' ?>" href="<?php $URL ?>/views/voitures/voitures.php">
             <?php echo "<img class='p-1 bg-cyan-600 rounded-md mr-4' width='27' src='../../src/img/images_sidebar/car.svg' alt=''>" ?>
             Cars
         </a>
