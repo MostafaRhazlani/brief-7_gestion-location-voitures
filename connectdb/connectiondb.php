@@ -2,12 +2,11 @@
     $servername = 'localhost';
     $username = 'root';
     $password = 'password';
+    $dbName = 'societe_location_voitures';
 
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=societe_location_voitures", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = mysqli_connect($servername, $username, $password, $dbName);
 
-    } catch (PDOException $e) {
-        die('Connection failed: ' . $e->getMessage());
+    if(!$conn) {
+        die("Connection failed" . mysqli_connect_error());
     }
 ?>

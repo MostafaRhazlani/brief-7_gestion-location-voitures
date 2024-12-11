@@ -3,7 +3,7 @@
     
     // select table users
     $voitures = "SELECT * FROM voitures";
-    $resultVoitures = $conn->query($voitures);
+    $resultVoitures = mysqli_query($conn, $voitures);
 ?>
 
 <?php include('../layout/_HEAD.php'); ?>
@@ -37,7 +37,7 @@
                 <tbody>
                     <!-- display all users -->
                     <?php if($resultVoitures) { ?>
-                        <?php while($voiture = $resultVoitures->fetch()) { ?>
+                        <?php while($voiture = mysqli_fetch_assoc($resultVoitures)) { ?>
                             <tr class="border-t-[0.2px] border-gray-500 hover:bg-[#585286]">
                                 <td class="px-2 py-4"><?php echo $voiture['id'] ?></td>
                                 <td class="px-2 py-4"><?php echo $voiture['numImmatriculation'] ?></td>

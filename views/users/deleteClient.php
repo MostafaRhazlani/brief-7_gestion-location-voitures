@@ -11,10 +11,11 @@
         </script>";
 
         // get client when id in url equal id of client
-        $getClient = "SELECT id, name FROM clients WHERE id = $getId";
-        $resultgetClient = $conn->query($getClient)->fetch();
+        $queryClient = mysqli_query($conn, "SELECT id, name FROM clients WHERE id = $getId");
+
+        $resultgetClient = mysqli_fetch_assoc($queryClient);
         
-        
+ 
     }
 
     if(isset($_POST['idUser'])) {
