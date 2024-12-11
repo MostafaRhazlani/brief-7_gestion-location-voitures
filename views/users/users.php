@@ -90,6 +90,15 @@
                     window.location.href = 'users.php'
                 }, 3000)
             </script>";
+        } else {
+            echo "<script>
+                const showAlertDelete = document.querySelector('.showAlertDelete');
+                showAlertDelete.classList.remove('hidden')
+
+                setTimeout(() => {
+                    window.location.href = 'users.php'
+                }, 3000)
+            </script>";
         }
     }
 ?>

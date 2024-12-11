@@ -1,4 +1,5 @@
-<?php 
+<?php
+    require_once('../../connectdb/connectiondb.php');
     //  check if the id exist in url and get it
     if(isset($_GET['idUser']) && isset($_GET['removeUser'])) {
         $getId = $_GET['idUser'];
@@ -13,6 +14,18 @@
         $getClient = "SELECT id, name FROM clients WHERE id = $getId";
         $resultgetClient = $conn->query($getClient); 
     }
+    
+    if(isset($_POST['idUser'])) {
+        $idUser = $_POST['idUser'];
+
+        $queryDelete = "DELETE FROM clients WHERE id = ?";
+        $params = array($idUser);
+        $resultQueryDelete = $conn->prepare($queryDelete);
+
+        if($resultQueryDelete->execute($params)) {
+            header('location:users.php?alert=success_delete');
+        }
+    }
 ?>
 
 <div class="formDelete absolute z-10 w-1/4 bg-white p-5 top-20 rounded-md hidden text-center">
@@ -24,10 +37,10 @@
 
     <h1 class="text-2xl font-semibold text-center mb-4">Are You Sure You Want Delete</h1>
     
-    <form action="">
+    <form action="./deleteClient.php" method="post">
         <?php if(isset($resultgetClient)) { ?>
             <?php while($client = $resultgetClient->fetch()) { ?>
-                <input type="hidden" name="idUser">
+                <input type="hidden" name="idUser" value="<?php echo $client['id'] ?>">
                 <div class="w-full p-3 bg-gray-200 rounded-md text-gray-700">
                     <h1><?php echo $client['name'] ?></h1>
                 </div>
