@@ -12,6 +12,8 @@
             echo "<h1 class='text-2xl font-semibold text-center mb-10'>Client updated succesfuly</h1>";
         } else if($page == '/views/voitures/voitures.php') {
             echo "<h1 class='text-2xl font-semibold text-center mb-10'>Voiture updated succesfuly</h1>";
+        } else {
+            echo "<h1 class='text-2xl font-semibold text-center mb-10'>Contrat updated succesfuly</h1>";
         }
     ?>
 </div>

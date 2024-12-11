@@ -66,6 +66,7 @@
         <?php include('./addContrats.php') ?>
         <?php include('./editContrat.php') ?>
         <?php include('../../alertAdd.php') ?>
+        <?php include('../../alertEdit.php') ?>
     </div>
 </div>
 
@@ -80,6 +81,15 @@
             echo "<script>
                 const showAlertAdd = document.querySelector('.showAlertAdd');
                 showAlertAdd.classList.remove('hidden')
+
+                setTimeout(() => {
+                    window.location.href = 'contrats.php'
+                }, 3000)
+            </script>";
+        } else if($alert == 'success_update') {
+            echo "<script>
+                const showAlertEdit = document.querySelector('.showAlertEdit');
+                showAlertEdit.classList.remove('hidden')
 
                 setTimeout(() => {
                     window.location.href = 'contrats.php'
