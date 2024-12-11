@@ -46,10 +46,10 @@
                                 <td class="px-2 py-4"><?php echo $voiture['annee'] ?></td>
                                 <td class="px-2 py-4">
                                     <a href="./voitures.php?idEditVoiture=<?php echo $voiture['id'] ?>" class="showFormEdit bg-blue-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-blue-500 mr-2">
-                                        <i class="fa-solid fa-user-pen"></i>&nbsp;Edit
+                                        <i class="fa-regular fa-pen-to-square"></i>&nbsp;Edit
                                     </a>
                                     <a href="./voitures.php?idDeleteVoiture=<?php echo $voiture['id'] ?>" class="showFormDelete bg-red-700 rounded-full px-2 py-1 text-white text-[13px] hover:bg-red-500 cursor-pointer">
-                                        <i class="fa-solid fa-user-minus"></i>&nbsp;Delete
+                                        <i class="fa-regular fa-trash-can"></i>&nbsp;Delete
                                     </a>
                                 </td>
                             </tr>
@@ -61,6 +61,7 @@
         <?php include('./addVoiture.php') ?>
         <?php include('./editVoiture.php') ?>
         <?php include('../../alertAdd.php') ?>
+        <?php include('../../alertEdit.php') ?>
     </div>
 </div>
 
@@ -74,6 +75,15 @@
             echo "<script>
                 const showAlertAdd = document.querySelector('.showAlertAdd');
                 showAlertAdd.classList.remove('hidden')
+
+                setTimeout(() => {
+                    window.location.href = 'voitures.php'
+                }, 3000)
+            </script>";
+        } else if ($alert == 'success_update') {
+            echo "<script>
+                const showAlertEdit = document.querySelector('.showAlertEdit');
+                showAlertEdit.classList.remove('hidden')
 
                 setTimeout(() => {
                     window.location.href = 'voitures.php'
