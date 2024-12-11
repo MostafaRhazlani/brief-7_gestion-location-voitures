@@ -59,6 +59,7 @@
                 </tbody>
             </table>
         </div>
+        <?php include('./addContrats.php') ?>
     </div>
 </div>
 
