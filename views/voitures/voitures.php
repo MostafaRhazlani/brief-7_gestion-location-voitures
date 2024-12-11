@@ -1,7 +1,7 @@
 <?php 
     require_once('../../connectdb/connectiondb.php');
     
-    // select table users
+    // select table voitures
     $voitures = "SELECT * FROM voitures";
     $resultVoitures = mysqli_query($conn, $voitures);
 ?>
@@ -35,7 +35,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- display all users -->
+                    <!-- display all voitures -->
                     <?php if($resultVoitures) { ?>
                         <?php while($voiture = mysqli_fetch_assoc($resultVoitures)) { ?>
                             <tr class="border-t-[0.2px] border-gray-500 hover:bg-[#585286]">
