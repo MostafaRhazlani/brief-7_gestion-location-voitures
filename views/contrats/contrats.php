@@ -60,11 +60,26 @@
             </table>
         </div>
         <?php include('./addContrats.php') ?>
+        <?php include('../../alertAdd.php') ?>
     </div>
 </div>
 
 <?php 
 
     include('../layout/_FOOTER.php');
+    
+    if(isset($_GET['alert'])) {
+        $alert = $_GET['alert'];
 
+        if($alert == 'success_add') {
+            echo "<script>
+                const showAlertAdd = document.querySelector('.showAlertAdd');
+                showAlertAdd.classList.remove('hidden')
+
+                setTimeout(() => {
+                    window.location.href = 'contrats.php'
+                }, 3000)
+            </script>";
+        }
+    }
 ?>
