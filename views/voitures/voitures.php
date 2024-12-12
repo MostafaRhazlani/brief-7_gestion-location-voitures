@@ -8,20 +8,12 @@
 
 <?php include('../layout/_HEAD.php'); ?>
 
-<div class="w-full h-screen grid grid-cols-5 grid-rows-10 p-2 gap-2">
-    <!-- include sidebar -->
-    <?php include('../layout/_SIDEBAR.php') ?>
-
-    <header class="col-span-4 row-span-1 py-4 px-6 bg-[#2a2455] rounded-md flex justify-end">
-        <input class="p-2 w-2/5 rounded-md" type="search" placeholder="Search...">
-    </header>
-
-    <div class="col-span-4 row-span-1 py-4 px-6 bg-[#2a2455] rounded-md text-white flex justify-between">
+    <div class="col-span-8 row-span-1 py-4 px-6 bg-[#2a2455] rounded-md text-white flex justify-between">
         <button class="showFormAdd py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-user-plus"></i> Add Client</button>
         <button class="py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-arrow-down-a-z"></i> Sort Clients</button>
     </div>
     
-    <div class="col-span-4 row-span-8 flex justify-center">
+    <div class="col-span-8 row-span-8 flex justify-center">
         <div class="w-full bg-[#2a2455] p-10 rounded-md">
             <table class="w-full mx-auto table-auto text-center text-gray-300">
                 <thead>
@@ -65,7 +57,6 @@
         <?php include('../../alertEdit.php') ?>
         <?php include('../../alertDelete.php') ?>
     </div>
-</div>
 
 <?php 
     

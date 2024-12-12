@@ -11,4 +11,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#16113a] font-['Poppins']">
+    <div class="w-full h-screen grid grid-cols-10 grid-rows-10 p-2 gap-2">
+        <!-- include sidebar -->
+         <?php 
+            if($_SERVER['PHP_SELF'] == '/views/dashboard.php') {
+                include('./layout/_SIDEBAR.php');
+            } else {
+                include('../layout/_SIDEBAR.php');
+            }
+        ?>
+
+        <header class="col-span-8 row-span-1 py-4 px-6 bg-[#2a2455] rounded-md flex justify-end">
+            <input class="p-2 w-2/5 rounded-md" type="search" placeholder="Search...">
+        </header>
     

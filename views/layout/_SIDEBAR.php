@@ -4,7 +4,7 @@
     $page = $_SERVER['PHP_SELF'];
 ?>
 
-<div class="bg-[#2a2455] rounded-md col-span-0 row-span-10 p-4 text-white">
+<div class="bg-[#2a2455] rounded-md col-span-2 row-span-10 p-4 text-white">
     <div class="flex items-center justify-center text-xl mb-8">
         <?php echo "<img width='80' src='../../src/img/images_sidebar/logo.png' alt=''>" ?>
         <h1 class="font-semibold text-[#837bbe]">RENTAL CAR</h1>
