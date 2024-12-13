@@ -9,12 +9,12 @@
 
 <?php include('../layout/_HEAD.php'); ?>
 
-    <div class="md:ml-[75px] md:col-span-10 lg:col-span-8 row-span-1 py-4 px-6 bg-[#2a2455] rounded-md text-white flex justify-between">
+    <div class="md:ml-[75px] lg:ml-0 md:col-span-10 lg:col-span-8 row-span-1 py-4 px-6 bg-[#2a2455] rounded-md text-white flex justify-between">
         <button class="showFormAdd py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-user-plus"></i> Add Client</button>
         <button class="py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-arrow-down-a-z"></i> Sort Clients</button>
     </div>
     
-    <div class="md:ml-[75px] md:col-span-10 lg:col-span-8 col-span-8 row-span-8 flex justify-center">
+    <div class="md:ml-[75px]lg:ml-0 md:col-span-10 lg:col-span-8 col-span-8 row-span-8 flex justify-center">
         <div class="w-full bg-[#2a2455] p-10 rounded-md">
             <table class="w-full mx-auto table-auto text-center text-gray-300">
                 <thead>

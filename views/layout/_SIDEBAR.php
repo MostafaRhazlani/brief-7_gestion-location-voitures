@@ -16,7 +16,7 @@
 </style>
 
 <div class="hideSidebar bg-[#2a2455] lg:rounded-md lg:col-span-2 fixed h-screen shadow-lg lg:static z-10 lg:z-0 lg:row-span-10 p-4 text-white">
-    <div class="w-full flex justify-end lg:hidden toggle">
+    <div class="w-full flex justify-end lg:hidden toggle mb-4">
         <span class="text-3xl cursor-pointer text-white">
             <i class="fa-solid fa-bars"></i>
         </span>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="image flex items-center mb-10">
-        <?php echo "<img class='rounded-full mt-4 bg-[#423c6b] w-10 h-10 border-2 border-[#7361ff]' src='../../src/img/images_sidebar/photo youcode.jpg' alt=''>" ?>
+        <?php echo "<img class='rounded-full bg-[#423c6b] w-10 h-10 border-2 border-[#7361ff]' src='../../src/img/images_sidebar/photo youcode.jpg' alt=''>" ?>
         <div class="ml-3">
             <h1 class="hide text-sm -mb-1"><?php echo $_SESSION['owner']['username'] ?></h1>
             <span class="hide text-gray-400 text-[12px]"><?php echo $_SESSION['owner']['email'] ?></span>

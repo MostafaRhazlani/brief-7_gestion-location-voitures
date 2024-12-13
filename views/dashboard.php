@@ -108,7 +108,7 @@
                 <h1 class="text-green-500 font-semibold">Top five client added</h1>
             </div>
             <div class="overflow-x-scroll lg:w-full lg:overflow-hidden">
-                <table class="min-w-[400px] lg:w-full text-gray-300 text-sm">
+                <table class="w-[400px] lg:w-full text-gray-300 text-sm">
                     <thead>
                         <tr class="text-green-500">
                             <th class="p-1 text-start">ID</th>
@@ -143,7 +143,7 @@
         </div>
         <div class="overflow-x-scroll lg:w-full lg:overflow-hidden">
             <!-- <div class=""> -->
-                <table class="min-w-[800px] lg:w-full text-gray-300 text-sm">
+                <table class="w-[800px] lg:w-full text-gray-300 text-sm">
                     <thead>
                         <tr class="text-green-500">
                             <th class="p-1 text-start">ID</th>
