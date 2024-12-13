@@ -1,4 +1,5 @@
 <?php
+    require_once('../../isOwner/isOwner.php');
     require_once('../../connectdb/connectiondb.php');
 
     $idContrat = isset($_POST['idContrat']) ? $_POST['idContrat'] : 0;

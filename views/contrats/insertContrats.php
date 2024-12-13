@@ -1,6 +1,7 @@
 <?php
+    require_once('../../isOwner/isOwner.php');
     require_once('../../connectdb/connectiondb.php');
-    
+
     $nameClient = isset($_POST['nameClient']) ? $_POST['nameClient'] : "";
     $immatriculation = isset($_POST['immatriculation']) ? $_POST['immatriculation'] : "";
     $dateDebut = isset($_POST['dateDebut']) ? $_POST['dateDebut'] : "";
@@ -13,6 +14,5 @@
 
     if($resultContrats->execute($params)) {
         header('location:contrats.php?alert=success_add');
-    }   
-
+    }  
 ?>

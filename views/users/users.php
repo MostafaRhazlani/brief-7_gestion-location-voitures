@@ -1,13 +1,13 @@
-<?php 
+<?php
+    require_once('../../isOwner/isOwner.php');
     require_once('../../connectdb/connectiondb.php');
-    include('../layout/_HEAD.php');
     
     // select table users
     $clients = "SELECT * FROM clients";
     $resultClients = mysqli_query($conn, $clients);
 ?>
 
-
+<?php include('../layout/_HEAD.php'); ?>
 
     <div class="col-span-8 row-span-1 py-4 px-6 bg-[#2a2455] rounded-md text-white flex justify-between">
         <button class="showFormAdd py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-user-plus"></i> Add Client</button>

@@ -1,3 +1,5 @@
+<?php require_once('../../isOwner/isOwner.php');?>
+
 <div class="formAdd absolute z-10 w-2/6 bg-white p-5 top-20 rounded-md hidden">
     <h1 class="text-2xl font-semibold text-center mb-5">Add New Client</h1>
     <form action="./insertClient.php" method="post">

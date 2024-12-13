@@ -1,4 +1,5 @@
 <?php 
+    require_once('../../isOwner/isOwner.php');
     //  check if the id exist in url and get it
     if(isset($_GET['idEditUser'])) {
         $getId = $_GET['idEditUser'];
