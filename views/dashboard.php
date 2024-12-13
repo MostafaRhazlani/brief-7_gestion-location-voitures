@@ -21,13 +21,8 @@
 
 
 <?php include('./layout/_HEAD.php'); ?>
-
-    <div class="col-span-8 row-span-1 py-4 px-6 bg-[#2a2455] rounded-md text-white flex justify-between">
-        <button class="showFormAdd py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-user-plus"></i> Add Client</button>
-        <button class="py-2 px-4 bg-[#423c6b] rounded-md hover:bg-[#5b5680]"><i class="fa-solid fa-arrow-down-a-z"></i> Sort Clients</button>
-    </div>
     
-    <div class="col-span-2 row-span-3 flex justify-center">
+    <div class="md:ml-[75px] lg:ml-0 md:col-span-3 lg:col-span-2 row-span-3 flex justify-center">
         <div class="w-full bg-[#2a2455] p-4 rounded-md">
             <div class="flex items-center mb-5">
                 <div class="w-[10px] h-[10px] bg-green-300 mr-2"></div>
@@ -39,18 +34,18 @@
                     <div class="chartVoiture h-full w-14 bg-cyan-600"></div>
                     <div class="chartContrat h-full w-14 bg-purple-600"></div>
                 </div>
-                <div class="flex flex-col justify-between text-white">
+                <!-- <div class="flex flex-col justify-between text-white">
                     <p>100</p>
                     <p>50</p>
                     <p>25</p>
                     <p>0</p>
-                </div>
+                </div> -->
             </div>
         </div>
         
     </div>
 
-    <div class="col-span-2 row-span-3 flex justify-center">
+    <div class="md:col-span-2 lg:col-span-2 row-span-3 flex justify-center">
         <div class="w-full bg-[#2a2455] p-4 rounded-md">
             <div class="flex items-center mb-3">
                 <div class="w-[10px] h-[10px] bg-green-300 mr-2"></div>
@@ -69,7 +64,7 @@
         
     </div>
 
-    <div class="col-span-2 row-span-3 flex justify-center">
+    <div class="md:col-span-2 lg:col-span-2 row-span-3 flex justify-center">
         <div class="w-full bg-[#2a2455] p-4 rounded-md">
         <div class="flex items-center mb-3">
                 <div class="w-[10px] h-[10px] bg-green-300 mr-2"></div>
@@ -87,7 +82,7 @@
         </div>
         
     </div>
-    <div class="col-span-2 row-span-3 flex justify-center">
+    <div class="md:col-span-3 lg:col-span-2 row-span-3 flex justify-center">
         <div class="w-full bg-[#2a2455] p-4 rounded-md">
         <div class="flex items-center mb-3">
                 <div class="w-[10px] h-[10px] bg-green-300 mr-2"></div>
@@ -106,71 +101,77 @@
         
     </div>
 
-    <div class="col-span-3 row-span-5 flex justify-center">
+    <div class="md:ml-[75px] lg:ml-0 md:col-span-5 lg:col-span-3 row-span-6 flex justify-center">
         <div class="w-full bg-[#2a2455] p-4 rounded-md">
             <div class="flex items-center mb-8">
                 <div class="w-2 h-2 bg-green-300 mr-2"></div>
                 <h1 class="text-green-500 font-semibold">Top five client added</h1>
             </div>
-            <table class="w-full mx-auto table-auto text-gray-300 text-sm">
-                <thead>
-                    <tr class="text-green-500">
-                        <th class="p-1 text-start">ID</th>
-                        <th class="p-1 text-start">Name</th>
-                        <th class="p-1 text-start">Address</th>
-                        <th class="p-1 text-start">N° Phone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- display all users -->
-                    <?php if($topFiveClients) { ?>
-                        <?php $index = 0; while($topFive = mysqli_fetch_assoc($topFiveClients)) { ?>
-                            <tr class="border-b-[0.2px] border-gray-500 hover:bg-[#585286]">
-                                <td class="px-1 py-3"><?php echo $index +=1 ?></td>
-                                <td class="px-1 py-3"><?php echo $topFive['name'] ?></td>
-                                <td class="px-1 py-3"><?php echo $topFive['address'] ?></td>
-                                <td class="px-1 py-3"><?php echo $topFive['numberPhone'] ?></td>
-                            </tr>
+            <div class="overflow-x-scroll lg:w-full lg:overflow-hidden">
+                <table class="min-w-[400px] lg:w-full text-gray-300 text-sm">
+                    <thead>
+                        <tr class="text-green-500">
+                            <th class="p-1 text-start">ID</th>
+                            <th class="p-1 text-start">Name</th>
+                            <th class="p-1 text-start">Address</th>
+                            <th class="p-1 text-start">N° Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- display all users -->
+                        <?php if($topFiveClients) { ?>
+                            <?php $index = 0; while($topFive = mysqli_fetch_assoc($topFiveClients)) { ?>
+                                <tr class="border-b-[0.2px] border-gray-500 hover:bg-[#585286]">
+                                    <td class="px-1 py-4"><?php echo $index +=1 ?></td>
+                                    <td class="px-1 py-4"><?php echo $topFive['name'] ?></td>
+                                    <td class="px-1 py-4"><?php echo $topFive['address'] ?></td>
+                                    <td class="px-1 py-4"><?php echo $topFive['numberPhone'] ?></td>
+                                </tr>
+                            <?php } ?>
                         <?php } ?>
-                    <?php } ?>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
-    <div class="col-span-5 row-span-5 flex justify-center">
+    <div class="md:col-span-5 lg:col-span-5 row-span-6 flex justify-center">
         <div class="w-full bg-[#2a2455] p-4 rounded-md">
         <div class="flex items-center mb-8">
             <div class="w-2 h-2 bg-green-300 mr-2"></div>
             <h1 class="text-green-500 font-semibold">Top five contrats added</h1>
         </div>
-        <table class="w-full mx-auto table-auto text-gray-300 text-sm">
-                <thead>
-                    <tr class="text-green-500">
-                        <th class="p-1 text-start">ID</th>
-                        <th class="p-1 text-start">Name Client</th>
-                        <th class="p-1 text-start">N° Immatriculation</th>
-                        <th class="p-1 text-start">Date Debut</th>
-                        <th class="p-1 text-start">Date Fin</th>
-                        <th class="p-1 text-start">Duree</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- display all contrats -->
-                     <?php if($topFiveContrats) { ?>
-                        <?php $index = 0; while($topFive = mysqli_fetch_assoc($topFiveContrats)) { ?>
-                            <tr class="border-b-[0.2px] border-gray-500 hover:bg-[#585286]">
-                                <td class="px-1 py-3"><?php echo $index +=1 ?></td>
-                                <td class="px-1 py-3"><?php echo $topFive['name'] ?></td>
-                                <td class="px-1 py-3"><?php echo $topFive['numImmatriculation'] ?></td>
-                                <td class="px-1 py-3"><?php echo $topFive['dateDebut'] ?></td>
-                                <td class="px-1 py-3"><?php echo $topFive['dateFin'] ?></td>
-                                <td class="px-1 py-3"><?php echo $topFive['duree'] ?></td>
-                            </tr>
+        <div class="overflow-x-scroll lg:w-full lg:overflow-hidden">
+            <!-- <div class=""> -->
+                <table class="min-w-[800px] lg:w-full text-gray-300 text-sm">
+                    <thead>
+                        <tr class="text-green-500">
+                            <th class="p-1 text-start">ID</th>
+                            <th class="p-1 text-start">Name Client</th>
+                            <th class="p-1 text-start">N° Immatriculation</th>
+                            <th class="p-1 text-start">Date Debut</th>
+                            <th class="p-1 text-start">Date Fin</th>
+                            <th class="p-1 text-start">Duree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- display all contrats -->
+                            <?php if($topFiveContrats) { ?>
+                            <?php $index = 0; while($topFive = mysqli_fetch_assoc($topFiveContrats)) { ?>
+                                <tr class="border-b-[0.2px] border-gray-500 hover:bg-[#585286]">
+                                    <td class="px-1 py-4"><?php echo $index +=1 ?></td>
+                                    <td class="px-1 py-4"><?php echo $topFive['name'] ?></td>
+                                    <td class="px-1 py-4"><?php echo $topFive['numImmatriculation'] ?></td>
+                                    <td class="px-1 py-4"><?php echo $topFive['dateDebut'] ?></td>
+                                    <td class="px-1 py-4"><?php echo $topFive['dateFin'] ?></td>
+                                    <td class="px-1 py-4"><?php echo $topFive['duree'] ?></td>
+                                </tr>
+                            <?php } ?>
                         <?php } ?>
-                    <?php } ?>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            <!-- </div> -->
+            </div>
         </div>
         
     </div>
