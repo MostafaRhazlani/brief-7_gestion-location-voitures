@@ -46,7 +46,7 @@
     <h1>Log out</h1>
     
     <div class="mt-2">
-        <a class="p-2 mb-1 hover:bg-[#595480] rounded-sm flex items-center <?php if($page == '/views/auth/login.php') echo 'bg-[#595480]' ?>" href="/views/auth/login.php">
+        <a class="p-2 mb-1 hover:bg-[#595480] rounded-sm flex items-center <?php if($page == '/views/auth/login.php') echo 'bg-[#595480]' ?>" href="/views/auth/logout.php">
             <?php echo "<img class='p-1 bg-red-600 rounded-md mr-4' width='26' src='../../src/img/images_sidebar/log-out.svg' alt=''>" ?>
                 Log out
         </a>
